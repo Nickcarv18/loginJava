@@ -94,11 +94,11 @@ public class UI_TelaLogin extends javax.swing.JFrame {
 
         separador2.setForeground(new java.awt.Color(255, 255, 255));
 
-        iconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/user_icon_149851 (1).png"))); // NOI18N
+        iconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user_icon_149851 (1).png"))); // NOI18N
 
-        iconSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/login-lock_icon-icons.com_48537.png"))); // NOI18N
+        iconSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/login-lock_icon-icons.com_48537.png"))); // NOI18N
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.png"))); // NOI18N
         logo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnFechar.setBackground(new java.awt.Color(25, 25, 25));

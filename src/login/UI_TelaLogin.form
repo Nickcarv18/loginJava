@@ -194,21 +194,21 @@
         <Component class="javax.swing.JLabel" name="iconUser">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/login/user_icon_149851 (1).png"/>
+              <Image iconType="3" name="/imagens/user_icon_149851 (1).png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="iconSenha">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/login/login-lock_icon-icons.com_48537.png"/>
+              <Image iconType="3" name="/imagens/login-lock_icon-icons.com_48537.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/login/logo.png"/>
+              <Image iconType="3" name="/imagens/logo.png"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>

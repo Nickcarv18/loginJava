@@ -18,6 +18,28 @@ public class UI_TelaLoading extends javax.swing.JFrame {
      */
     public UI_TelaLoading() {
         initComponents();
+        
+        new  Thread(){
+            
+         public void run(){
+             try {      
+                for(int i = 0; i <= 100;  i += 2){
+                    sleep(70);
+
+                    barraLoading.setValue(i);
+                    txtPorcentagem.setText(Integer.toString(i) + "%");
+                }
+                     
+                dispose();
+                        
+                UI_TelaLogin login = new UI_TelaLogin();
+                login.setVisible(true);
+                
+            }catch(InterruptedException e){
+                JOptionPane.showConfirmDialog(null, "Erro!");
+            }
+         }  
+        }.start();
     }
 
     /**
@@ -35,13 +57,19 @@ public class UI_TelaLoading extends javax.swing.JFrame {
         txtPorcentagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setUndecorated(true);
 
         painelLoading.setBackground(new java.awt.Color(25, 25, 25));
 
-        logoLoading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/logo.png"))); // NOI18N
+        logoLoading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.png"))); // NOI18N
 
+        barraLoading.setBackground(new java.awt.Color(255, 255, 255));
+        barraLoading.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
         barraLoading.setForeground(new java.awt.Color(0, 204, 204));
+        barraLoading.setToolTipText("");
+        barraLoading.setBorder(null);
+        barraLoading.setBorderPainted(false);
 
         txtPorcentagem.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
         txtPorcentagem.setForeground(new java.awt.Color(0, 204, 204));
@@ -52,9 +80,9 @@ public class UI_TelaLoading extends javax.swing.JFrame {
         painelLoadingLayout.setHorizontalGroup(
             painelLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLoadingLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addComponent(logoLoading)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
                 .addGroup(painelLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoadingLayout.createSequentialGroup()
                         .addComponent(barraLoading, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -65,17 +93,20 @@ public class UI_TelaLoading extends javax.swing.JFrame {
         );
         painelLoadingLayout.setVerticalGroup(
             painelLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLoadingLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(logoLoading, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoadingLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(162, Short.MAX_VALUE)
                 .addComponent(barraLoading, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtPorcentagem)
                 .addGap(123, 123, 123))
+            .addGroup(painelLoadingLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(logoLoading, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        barraLoading.getAccessibleContext().setAccessibleName("Barra de carregamento");
+        barraLoading.getAccessibleContext().setAccessibleDescription("Barra de carregamento");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,26 +150,6 @@ public class UI_TelaLoading extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-          UI_TelaLoading loading = new UI_TelaLoading();
-          loading.setVisible(true);
-          
-          try {
-                for(int i = 0; i <= 100;  i += 2){
-                    Thread.sleep(70);
-
-                    loading.barraLoading.setValue(i);
-                    loading.txtPorcentagem.setText(Integer.toString(i) + "%");
-                }
-
-                loading.dispose();
-
-                UI_TelaLogin login = new UI_TelaLogin();
-                login.setVisible(true);
-                
-          }catch(InterruptedException e){
-              JOptionPane.showConfirmDialog(null, "Erro!");
-          }
-        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
              public void run() {
